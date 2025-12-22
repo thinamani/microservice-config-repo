@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://host.docker.internal:5432/user-db
+    username: testuser
+    password: testuser
+
+  jpa:
+    show-sql: false
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-service:8761/eureka/
+
+logging:
+  level:
+    root: INFO
