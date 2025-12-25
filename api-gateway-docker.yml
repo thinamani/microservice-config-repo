@@ -1,0 +1,6 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://idp-keycloak:8091/realms/microservices-realm/protocol/openid-connect/certs
