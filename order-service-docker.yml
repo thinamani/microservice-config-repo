@@ -1,0 +1,19 @@
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+# -------------------------------
+# Logging (Safe defaults)
+# -------------------------------
+logging:
+  level:
+    root: INFO
+    com.e2e.example.order_service: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
