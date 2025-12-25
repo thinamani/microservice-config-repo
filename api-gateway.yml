@@ -12,6 +12,7 @@ spring:
           predicates:
             - Path=/products/**
           filters:
+            - TokenRelay
             - name: RequestRateLimiter
               args:
                 redis-rate-limiter.replenishRate: 1
@@ -23,17 +24,12 @@ spring:
           predicates:
             - Path=/orders/**
           filters:
+            - TokenRelay
             - name: RequestRateLimiter
               args:
                 redis-rate-limiter.replenishRate: 5
                 redis-rate-limiter.burstCapacity: 7
                 key-resolver: "#{@userKeyResolver}"
-
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          jwk-set-uri: http://idp-keycloak:8091/realms/microservices-realm/protocol/openid-connect/certs
 
 eureka:
   client:
